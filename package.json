@@ -1,0 +1,32 @@
+{
+  "name": "@bgoodman/rotate-array",
+  "version": "1.0.0",
+  "description": "Rotate 1D and 2D arrays by +/- n steps.",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "__tests__"
+  ],
+  "scripts": {
+    "build": "rimraf ./dist && tsc",
+    "test": "./node_modules/.bin/jest"
+  },
+  "devDependencies": {
+    "@types/jest": "^25.1.4",
+    "jest": "^25.1.0",
+    "rimraf": "^3.0.2",
+    "ts-jest": "^25.2.1",
+    "typescript": "^3.8.3"
+  },
+  "author": {
+    "name": "Benjamin Goodman",
+    "email": "b@thebgoodman.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/b-goodman/rotate-array"
+  }
+}
