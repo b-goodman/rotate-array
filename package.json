@@ -1,6 +1,6 @@
 {
   "name": "@bgoodman/rotate-array",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Rotate 1D and 2D arrays by +/- n steps.",
   "license": "MIT",
   "main": "dist/index.js",

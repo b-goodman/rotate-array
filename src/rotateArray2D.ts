@@ -1,7 +1,6 @@
-import { Array2D } from './types';
 
 
-const rotLeft2D = <T>(a: Array2D<T>) => {
+const rotLeft2D = <T>(a: Array<Array<T>>) => {
 	// mxn -> nxm array
 	const m = a.length; //rows
 	const n = a[0].length; //columns
@@ -17,7 +16,7 @@ const rotLeft2D = <T>(a: Array2D<T>) => {
 	return newArray;
 }
 
-const rotRight2D = <T>(a: Array2D<T>) => {
+const rotRight2D = <T>(a: Array<Array<T>>) => {
 	// mxn -> nxm array
 	const m = a.length; //rows
 	const n = a[0].length; //columns
@@ -34,13 +33,13 @@ const rotRight2D = <T>(a: Array2D<T>) => {
 }
 
 
-const rotateArray2D = <T>(a:Array2D<T>, d: number): Array2D<T> => {
+const rotateArray2D = <T>(a:Array<Array<T>>, d: number): Array<Array<T>> => {
 	let stepsAbs = Math.abs(d);
 	let direction = Math.sign(d);
 	// direction == 1 ? console.log("right") : console.log("left");
 
 	// select correct function based on sign of steps param
-	const rotateOnce = (array: Array2D<T>) => direction == 1 ? rotRight2D(array) : rotLeft2D(array)
+	const rotateOnce = (array: Array<Array<T>>) => direction == 1 ? rotRight2D(array) : rotLeft2D(array)
 
 	if (stepsAbs % 4 > 0) { // prevent unnecessary rotations
 		let newRotation = rotateOnce(a); // rotate input array once
@@ -48,7 +47,7 @@ const rotateArray2D = <T>(a:Array2D<T>, d: number): Array2D<T> => {
 			let stepsCount = stepsAbs - 1;
 
 			// apply rotations while stepsCount is > 0
-			const recurse = (accumalate: Array2D<T>): Array2D<T> => {
+			const recurse = (accumalate: Array<Array<T>>): Array<Array<T>> => {
 				const rotatedAccumaltor = rotateOnce(accumalate); //rotate 2nd time
 				return --stepsCount == 0 ? rotatedAccumaltor : recurse(rotatedAccumaltor) // rotate again if needed
 			};
